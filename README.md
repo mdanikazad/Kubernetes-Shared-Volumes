@@ -24,12 +24,12 @@ Note: The kubectl utility on jump_host has been configured to work with the kube
 # Step 1: kubectl create -f <this file>
 # Step 2: Wait for the pod to be in running state
 # Step 3: Get a shell to the first container in the pod:
-#         kubectl exec volume-share-devops --container volume-container-devops-1 -- /bin/bash
+#         kubectl exec -it <podname> --container <containername> -- /bin/bash
 # Step 4: In the resulting prompt, create a text file as per the question:
 #         echo "Welcome to xFusionCorp Industries!" > /tmp/ecommerce/ecommerce.txt
 # Step 5: Verify: Check that you are able to see this file in the second container
 #         under corresponding volume mount path as they use shared volumes:
-#         kubectl exec volume-share-devops --container volume-container-devops-2 --
+#         kubectl exec -it <podname> --container <containername> -- /bin/bash
 #         cat /tmp/apps/ecommerce.txt
 
  For tips on getting better at Kubernetes tasks, check out the README.md
